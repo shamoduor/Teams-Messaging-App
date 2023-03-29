@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="bottom"
+            android:weightSum="4">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:contentDescription="@string/circles"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_top_circles_green" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:weightSum="4">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:contentDescription="@string/circles"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_bottom_circles_blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="56dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/view_bg_round_all_end"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="@string/email_address"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/ic_password"
+                    app:tint="@color/colorBlue" />
+
+                <EditText
+                    android:id="@+id/edtOTP"
+                    style="@style/AuthEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:digits="1234567890"
+                    android:hint="OTP"
+                    android:inputType="number"
+                    android:maxLength="6" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtSubHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layoutInput"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="@string/sent_to_email_here"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtSubHeader"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/we_have_sent_an_otp_to_your_email"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnVerifyAndProceed"
+            style="@style/ButtonRoundEndRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutInput"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="Verify &amp; Proceed" />
+
+        <TextView
+            android:id="@+id/txtResendPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnVerifyAndProceed"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="@string/didn_t_receive_a_verification_code"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/txtResendTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtResendPrompt"
+            android:layout_centerHorizontal="true"
+            android:text="@string/resend_email_m_s"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnResendSms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtResendTimer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_round"
+            android:paddingHorizontal="32dp"
+            android:text="Resend Email"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</layout>

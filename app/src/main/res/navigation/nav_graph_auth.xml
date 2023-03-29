@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_auth"
+    app:startDestination="@id/fragmentLogin">
+
+    <fragment
+        android:id="@+id/fragmentRegister"
+        android:name="com.shamine.teamsmessagingapp.fragments.auth.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/actionRegisterBackToLogin"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/fragmentLogin" />
+        <action
+            android:id="@+id/actionRegisterToForgotPassword"
+            app:destination="@id/fragmentForgotPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionRegisterToOTP"
+            app:destination="@id/fragmentOTP"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.shamine.teamsmessagingapp.fragments.auth.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/actionLoginToRegister"
+            app:destination="@id/fragmentRegister"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionLoginToForgotPassword"
+            app:destination="@id/fragmentForgotPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentForgotPassword"
+        android:name="com.shamine.teamsmessagingapp.fragments.auth.ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/fragmentOTP"
+        android:name="com.shamine.teamsmessagingapp.fragments.auth.OTPFragment"
+        tools:layout="@layout/fragment_otp" />
+</navigation>

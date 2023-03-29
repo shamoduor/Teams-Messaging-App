@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_chat"
+    app:startDestination="@id/fragmentHome">
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/actionHomeToProfile"
+            app:destination="@id/fragmentProfile"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionHomeToContactList"
+            app:destination="@id/fragmentContactList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionHomeToChats"
+            app:destination="@id/fragmentChats"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionHomeToCreateGroup"
+            app:destination="@id/fragmentCreateGroup"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentChats"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.ChatsFragment"
+        tools:layout="@layout/fragment_chats">
+
+        <action
+            android:id="@+id/actionChatsToGroupInfo"
+            app:destination="@id/fragmentGroupInfo"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentContactList"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.ContactListFragment"
+        android:label="@string/contact_list"
+        tools:layout="@layout/fragment_contact_list">
+
+        <action
+            android:id="@+id/actionContactListToContactAdd"
+            app:destination="@id/fragmentContactAdd"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/actionContactListToChats"
+            app:destination="@id/fragmentChats"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/fragmentContactAdd"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.ContactAddFragment"
+        android:label="Add Contact"
+        tools:layout="@layout/fragment_contact_add" />
+
+    <fragment
+        android:id="@+id/fragmentCreateGroup"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.CreateGroupFragment"
+        android:label="@string/create_new_group"
+        tools:layout="@layout/fragment_create_group" />
+
+    <fragment
+        android:id="@+id/fragmentGroupInfo"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.GroupInfoFragment"
+        tools:layout="@layout/fragment_group_info">
+
+        <action
+            android:id="@+id/actionGroupInfoToChats"
+            app:destination="@id/fragmentChats"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/actionGroupInfoBackToHome"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/fragmentHome" />
+
+        <action
+            android:id="@+id/actionGroupInfoToAddGroupMembers"
+            app:destination="@id/fragmentAddGroupMembers"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentAddGroupMembers"
+        android:name="com.shamine.teamsmessagingapp.fragments.chats.AddGroupMembersFragment"
+        tools:layout="@layout/fragment_group_add_members" />
+</navigation>

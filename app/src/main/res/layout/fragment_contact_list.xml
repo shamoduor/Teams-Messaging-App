@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:theme="@style/Theme.TeamsMessagingApp.Material"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/autoCompleteCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgSearch"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/colorPrimary" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgSearch"
+                        android:background="@null"
+                        android:completionThreshold="1"
+                        android:hint="@string/search"
+                        android:lines="1"
+                        android:paddingStart="4dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/autoCompleteCardView" />
+
+            <TextView
+                android:id="@+id/txtInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:padding="16dp" />
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/add_new"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:backgroundTint="@color/colorPrimary"
+            app:icon="@drawable/ic_plus"
+            app:iconTint="@color/colorWhite"
+            app:layout_anchor="@id/layoutMain"
+            app:layout_anchorGravity="bottom|end|right" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

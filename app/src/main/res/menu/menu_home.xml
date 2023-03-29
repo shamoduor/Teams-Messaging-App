@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuSearchUserGroup"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuViewContactList"
+        android:title="@string/view_contact_list"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuCreateGroup"
+        android:title="@string/create_group"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuViewProfileDetails"
+        android:title="@string/view_profile_details"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuBackup"
+        android:title="@string/backup_data"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuLogOut"
+        android:title="@string/log_out"
+        app:showAsAction="never" />
+</menu>

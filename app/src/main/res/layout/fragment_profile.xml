@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H,4:3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/profile"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_profile"
+                    android:tint="#A6000000" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/civProfilePic"
+                        android:layout_width="152dp"
+                        android:layout_height="152dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/temp_user"
+                        app:civ_circle_background_color="@color/colorPrimary" />
+
+                    <RelativeLayout
+                        android:id="@+id/layoutChangePic"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignEnd="@+id/civProfilePic"
+                        android:layout_alignBottom="@+id/civProfilePic"
+                        android:background="@drawable/bg_round_blue">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/change_profile_picture"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/colorWhite" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txtFullName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/civProfilePic"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="@string/username"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_user"
+                    app:tint="@color/colorBlue" />
+
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/username"
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="@string/email_address"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_email"
+                    app:tint="@color/colorBlue" />
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/email_address"
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+</layout>

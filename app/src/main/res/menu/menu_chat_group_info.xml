@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuAddMember"
+        android:title="@string/add_member"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuRename"
+        android:title="@string/rename"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuEditIcon"
+        android:title="@string/edit_icon"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuDeleteGroup"
+        android:title="@string/delete_group"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>

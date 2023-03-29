@@ -1,0 +1,548 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "cde2bc6b48a39e05bd1e2dcd7bae0f16",
+    "entities": [
+      {
+        "tableName": "BackupResource",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`resourceId` INTEGER NOT NULL, `storageUrl` TEXT, `userId` INTEGER NOT NULL, `createdOn` INTEGER NOT NULL, `available` INTEGER NOT NULL, PRIMARY KEY(`resourceId`))",
+        "fields": [
+          {
+            "fieldPath": "resourceId",
+            "columnName": "resourceId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storageUrl",
+            "columnName": "storageUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdOn",
+            "columnName": "createdOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "available",
+            "columnName": "available",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "resourceId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_BackupResource_userId",
+            "unique": false,
+            "columnNames": [
+              "userId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_BackupResource_userId` ON `${TABLE_NAME}` (`userId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ChatGroup",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`chatGroupId` INTEGER NOT NULL, `title` TEXT, `createdBy` INTEGER NOT NULL, `createdOn` INTEGER NOT NULL, `available` INTEGER NOT NULL, `loggedInUserId` INTEGER NOT NULL, PRIMARY KEY(`chatGroupId`))",
+        "fields": [
+          {
+            "fieldPath": "chatGroupId",
+            "columnName": "chatGroupId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdBy",
+            "columnName": "createdBy",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdOn",
+            "columnName": "createdOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "available",
+            "columnName": "available",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loggedInUserId",
+            "columnName": "loggedInUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "chatGroupId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_ChatGroup_createdBy",
+            "unique": false,
+            "columnNames": [
+              "createdBy"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ChatGroup_createdBy` ON `${TABLE_NAME}` (`createdBy`)"
+          },
+          {
+            "name": "index_ChatGroup_loggedInUserId",
+            "unique": false,
+            "columnNames": [
+              "loggedInUserId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ChatGroup_loggedInUserId` ON `${TABLE_NAME}` (`loggedInUserId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ChatGroupMember",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`memberId` INTEGER NOT NULL, `chatGroupId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, `addedOn` INTEGER NOT NULL, `available` INTEGER NOT NULL, `isAdmin` INTEGER NOT NULL, PRIMARY KEY(`memberId`))",
+        "fields": [
+          {
+            "fieldPath": "memberId",
+            "columnName": "memberId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chatGroupId",
+            "columnName": "chatGroupId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addedOn",
+            "columnName": "addedOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "available",
+            "columnName": "available",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isAdmin",
+            "columnName": "isAdmin",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "memberId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_ChatGroupMember_chatGroupId",
+            "unique": false,
+            "columnNames": [
+              "chatGroupId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ChatGroupMember_chatGroupId` ON `${TABLE_NAME}` (`chatGroupId`)"
+          },
+          {
+            "name": "index_ChatGroupMember_userId",
+            "unique": false,
+            "columnNames": [
+              "userId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ChatGroupMember_userId` ON `${TABLE_NAME}` (`userId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MessageGroup",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`chatGroupId` INTEGER NOT NULL, `senderId` INTEGER NOT NULL, `messageId` INTEGER NOT NULL, `content` TEXT, `createdOn` INTEGER NOT NULL, PRIMARY KEY(`messageId`))",
+        "fields": [
+          {
+            "fieldPath": "chatGroupId",
+            "columnName": "chatGroupId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senderId",
+            "columnName": "senderId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "messageId",
+            "columnName": "messageId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdOn",
+            "columnName": "createdOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "messageId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_MessageGroup_chatGroupId",
+            "unique": false,
+            "columnNames": [
+              "chatGroupId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MessageGroup_chatGroupId` ON `${TABLE_NAME}` (`chatGroupId`)"
+          },
+          {
+            "name": "index_MessageGroup_senderId",
+            "unique": false,
+            "columnNames": [
+              "senderId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MessageGroup_senderId` ON `${TABLE_NAME}` (`senderId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MessagePrivate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`recipientId` INTEGER NOT NULL, `senderId` INTEGER NOT NULL, `availableForRecipient` INTEGER NOT NULL, `receivedOn` INTEGER, `readOn` INTEGER, `messageId` INTEGER NOT NULL, `content` TEXT, `createdOn` INTEGER NOT NULL, PRIMARY KEY(`messageId`))",
+        "fields": [
+          {
+            "fieldPath": "recipientId",
+            "columnName": "recipientId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senderId",
+            "columnName": "senderId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "availableForRecipient",
+            "columnName": "availableForRecipient",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "receivedOn",
+            "columnName": "receivedOn",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "readOn",
+            "columnName": "readOn",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "messageId",
+            "columnName": "messageId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdOn",
+            "columnName": "createdOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "messageId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_MessagePrivate_recipientId",
+            "unique": false,
+            "columnNames": [
+              "recipientId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MessagePrivate_recipientId` ON `${TABLE_NAME}` (`recipientId`)"
+          },
+          {
+            "name": "index_MessagePrivate_senderId",
+            "unique": false,
+            "columnNames": [
+              "senderId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MessagePrivate_senderId` ON `${TABLE_NAME}` (`senderId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `name` TEXT, `username` TEXT, `email` TEXT, `password` TEXT, `picUrl` TEXT, `passwordResetCode` TEXT, `createdOn` INTEGER NOT NULL, `token` TEXT, PRIMARY KEY(`userId`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "picUrl",
+            "columnName": "picUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "passwordResetCode",
+            "columnName": "passwordResetCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdOn",
+            "columnName": "createdOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "token",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Contact",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `name` TEXT, `username` TEXT, `picUrl` TEXT, `loggedInUserId` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "picUrl",
+            "columnName": "picUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "loggedInUserId",
+            "columnName": "loggedInUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Contact_loggedInUserId",
+            "unique": false,
+            "columnNames": [
+              "loggedInUserId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Contact_loggedInUserId` ON `${TABLE_NAME}` (`loggedInUserId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "GroupMessageDelivery",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`deliveryId` INTEGER NOT NULL, `messageGroupId` INTEGER NOT NULL, `chatGroupMemberId` INTEGER NOT NULL, `receivedOn` INTEGER NOT NULL, `readOn` INTEGER, PRIMARY KEY(`deliveryId`))",
+        "fields": [
+          {
+            "fieldPath": "deliveryId",
+            "columnName": "deliveryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "messageGroupId",
+            "columnName": "messageGroupId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chatGroupMemberId",
+            "columnName": "chatGroupMemberId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "receivedOn",
+            "columnName": "receivedOn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "readOn",
+            "columnName": "readOn",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "deliveryId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_GroupMessageDelivery_messageGroupId",
+            "unique": false,
+            "columnNames": [
+              "messageGroupId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_GroupMessageDelivery_messageGroupId` ON `${TABLE_NAME}` (`messageGroupId`)"
+          },
+          {
+            "name": "index_GroupMessageDelivery_chatGroupMemberId",
+            "unique": false,
+            "columnNames": [
+              "chatGroupMemberId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_GroupMessageDelivery_chatGroupMemberId` ON `${TABLE_NAME}` (`chatGroupMemberId`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [
+      {
+        "viewName": "ContactGroupDbView",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT * FROM User WHERE token IS NOT NULL LIMIT 1"
+      },
+      {
+        "viewName": "ContactView",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT * FROM Contact"
+      },
+      {
+        "viewName": "ChatGroupView",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT * FROM ChatGroup"
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cde2bc6b48a39e05bd1e2dcd7bae0f16')"
+    ]
+  }
+}

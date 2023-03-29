@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TeamsMessagingApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorBg</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.TeamsMessagingApp.Material" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorBg</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AuthEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColorHint">#333333</item>
+        <item name="android:lines">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+
+    <style name="ButtonRoundEndRed" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_round_end</item>
+        <item name="android:minWidth">104dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>

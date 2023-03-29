@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "609300462498",
+    "project_id": "teams-messaging-sham",
+    "storage_bucket": "teams-messaging-sham.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609300462498:android:066aa0415dd151db7950fb",
+        "android_client_info": {
+          "package_name": "com.shamine.teamsmessagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609300462498-au953a1l1sjkkiaa7jij2sp63j85bnlv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_SM7FsjP64iujSOUuTKvSh5RbvJUCT6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609300462498-au953a1l1sjkkiaa7jij2sp63j85bnlv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

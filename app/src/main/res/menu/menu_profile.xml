@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuBackup"
+        android:title="@string/backup_data"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuChangeUsername"
+        android:title="@string/change_username"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuEditDisplayName"
+        android:title="@string/edit_display_name"
+        app:showAsAction="never" />
+</menu>
